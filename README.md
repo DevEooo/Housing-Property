@@ -10,19 +10,15 @@ A housing property website frontend that displays property listings with a focus
 Currently, the project includes only the UI (no backend or authentication). Login and register pages may be added later.
 
 ## 🛠 Tech Stack
-- React
+- TypeScript + Vite
 - Tailwind CSS
-- Framer Motion (for animations)
+- Framer Motion
+- React
+- Sonner
 
 ## ✨ Features
 - ✅ Property listings page with clean layout  
 - ✅ Responsive design for desktop & mobile  
 - ✅ Modern animations and transitions  
-- ⬜ Login & Register pages (planned)  
-- ⬜ Backend integration for dynamic data (planned)
-
-## 🚀 Setup
-1. Clone the repo  
-   ```bash
-   git clone https://github.com/username/housing-property-ui.git
-   cd housing-property-ui
+- ⬜ Login & Register pages (coming soon)  
+- ⬜ Firebase integration for dynamic data (coming soon)
