@@ -1,11 +1,28 @@
 
-  # Housing Property Application
+  # 🏠 Housing Property Website (UI)
 
-  This is a code bundle for Housing Property Application. The original project is available at https://www.figma.com/design/0Q5fZfKeUA0NILUocBxrzW/Housing-Property-Application.
+## 📌 Purpose
+This project was built to practice creating a modern, responsive real estate website UI.  
+The goal is to design a clean and user-friendly interface for showcasing property listings.
 
-  ## Running the code
+## 📖 Description
+A housing property website frontend that displays property listings with a focus on responsive design and usability.  
+Currently, the project includes only the UI (no backend or authentication). Login and register pages may be added later.
 
-  Run `npm i` to install the dependencies.
+## 🛠 Tech Stack
+- React
+- Tailwind CSS
+- Framer Motion (for animations)
 
-  Run `npm run dev` to start the development server.
-  
+## ✨ Features
+- ✅ Property listings page with clean layout  
+- ✅ Responsive design for desktop & mobile  
+- ✅ Modern animations and transitions  
+- ⬜ Login & Register pages (planned)  
+- ⬜ Backend integration for dynamic data (planned)
+
+## 🚀 Setup
+1. Clone the repo  
+   ```bash
+   git clone https://github.com/username/housing-property-ui.git
+   cd housing-property-ui
