@@ -1,13 +1,12 @@
 
-  # 🏠 Housing Property Website (UI)
+  # 🏠 Housing Property Website
 
 ## 📌 Purpose
 This project was built to practice creating a modern, responsive real estate website UI.  
 The goal is to design a clean and user-friendly interface for showcasing property listings.
 
 ## 📖 Description
-A housing property website frontend that displays property listings with a focus on responsive design and usability.  
-Currently, the project includes only the UI (no backend or authentication). Login and register pages may be added later.
+Housing Property is a digital platform designed to simplify the process of discovering, applying for, and managing housing properties. It caters to both property seekers (tenants, buyers) and property providers (landlords, agents, developers) by offering a clean, responsive, and user-friendly interface. The platform focuses on streamlining real estate browsing while laying the foundation for future integration of advanced tools such as application management, property listings, and real-time updates.
 
 ## 🛠 Tech Stack
 - TypeScript + Vite
