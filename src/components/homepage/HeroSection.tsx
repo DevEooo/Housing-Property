@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { ImageWithFallback } from './fallback/ImageWithFallback';
+import { ImageWithFallback } from '../fallback/ImageWithFallback';
 import { Search, MapPin, Home, DollarSign } from 'lucide-react';
 import { motion } from 'motion/react';
 import { AnimatedCounter } from './AnimatedCounter';
@@ -55,7 +55,6 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.6 }}
-              whileHover={{ shadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
                 <div className="space-y-2">
@@ -73,7 +72,7 @@ export function HeroSection() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Property Type</label>
-                  <Select onValueChange={(value) => setSearchData({...searchData, propertyType: value})}>
+                  <Select onValueChange={(value: any) => setSearchData({...searchData, propertyType: value})}>
                     <SelectTrigger>
                       <div className="flex items-center">
                         <Home className="h-4 w-4 mr-2 text-muted-foreground" />
@@ -91,7 +90,7 @@ export function HeroSection() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Price Range</label>
-                  <Select onValueChange={(value) => setSearchData({...searchData, priceRange: value})}>
+                  <Select onValueChange={(value: any) => setSearchData({...searchData, priceRange: value})}>
                     <SelectTrigger>
                       <div className="flex items-center">
                         <DollarSign className="h-4 w-4 mr-2 text-muted-foreground" />
@@ -109,7 +108,7 @@ export function HeroSection() {
 
                 <div className="space-y-2">
                   <label className="text-sm font-medium text-foreground">Size</label>
-                  <Select onValueChange={(value) => setSearchData({...searchData, size: value})}>
+                  <Select onValueChange={(value: any) => setSearchData({...searchData, size: value})}>
                     <SelectTrigger>
                       <SelectValue placeholder="Size" />
                     </SelectTrigger>

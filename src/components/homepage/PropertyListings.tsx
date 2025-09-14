@@ -3,10 +3,10 @@ import { Button } from './ui/button';
 import { Card, CardContent, CardFooter } from './ui/card';
 import { Badge } from './ui/badge';
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
-import { ImageWithFallback } from './fallback/ImageWithFallback';
+import { ImageWithFallback } from '../fallback/ImageWithFallback';
 import { MapPin, Bed, Bath, Square, Heart, Eye, Play, Calendar, Phone, Share2, Maximize2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 interface Property {
   id: number;

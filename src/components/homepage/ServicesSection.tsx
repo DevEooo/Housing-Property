@@ -1,6 +1,6 @@
 import { Button } from './ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { ImageWithFallback } from './fallback/ImageWithFallback';
+import { ImageWithFallback } from '../fallback/ImageWithFallback';
 import { Wrench, Users, Building, PaintBucket, Lightbulb, Shield } from 'lucide-react';
 
 const services = [

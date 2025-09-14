@@ -1,5 +1,5 @@
 import { Card, CardContent } from './ui/card';
-import { ImageWithFallback } from './fallback/ImageWithFallback';
+import { ImageWithFallback } from '../fallback/ImageWithFallback';
 import { Award, Users, Building, TrendingUp, Shield, Clock } from 'lucide-react';
 import { motion } from 'motion/react';
 import { AnimatedCounter } from './AnimatedCounter';

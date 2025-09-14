@@ -7,7 +7,7 @@ import { Label } from './ui/label';
 import { Textarea } from './ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 import { Calendar, MessageSquare, DollarSign, Phone, Mail, MapPin } from 'lucide-react';
-import { toast } from 'sonner@2.0.3';
+import { toast } from 'sonner';
 
 export function CTASection() {
   const [bookingData, setBookingData] = useState({
@@ -140,7 +140,7 @@ export function CTASection() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="time">Preferred Time</Label>
-                        <Select onValueChange={(value) => setBookingData({...bookingData, time: value})}>
+                        <Select onValueChange={(value: any) => setBookingData({...bookingData, time: value})}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select time" />
                           </SelectTrigger>
@@ -155,7 +155,7 @@ export function CTASection() {
 
                     <div className="space-y-2">
                       <Label htmlFor="propertyType">Property Interest</Label>
-                      <Select onValueChange={(value) => setBookingData({...bookingData, propertyType: value})}>
+                      <Select onValueChange={(value: any) => setBookingData({...bookingData, propertyType: value})}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select property type" />
                         </SelectTrigger>
@@ -242,7 +242,7 @@ export function CTASection() {
 
                     <div className="space-y-2">
                       <Label htmlFor="serviceType">Service Type</Label>
-                      <Select onValueChange={(value) => setQuoteData({...quoteData, serviceType: value})}>
+                      <Select onValueChange={(value: any) => setQuoteData({...quoteData, serviceType: value})}>
                         <SelectTrigger>
                           <SelectValue placeholder="Select service" />
                         </SelectTrigger>
@@ -258,7 +258,7 @@ export function CTASection() {
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="budget">Budget Range</Label>
-                        <Select onValueChange={(value) => setQuoteData({...quoteData, budget: value})}>
+                        <Select onValueChange={(value: any) => setQuoteData({...quoteData, budget: value})}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select budget" />
                           </SelectTrigger>
@@ -272,7 +272,7 @@ export function CTASection() {
                       </div>
                       <div className="space-y-2">
                         <Label htmlFor="timeline">Timeline</Label>
-                        <Select onValueChange={(value) => setQuoteData({...quoteData, timeline: value})}>
+                        <Select onValueChange={(value: any) => setQuoteData({...quoteData, timeline: value})}>
                           <SelectTrigger>
                             <SelectValue placeholder="Select timeline" />
                           </SelectTrigger>
