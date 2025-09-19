@@ -3,13 +3,13 @@ import { getAnalytics } from "firebase/analytics";
 import { getAuth, updateProfile } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDxXrmDQxXP9UgBEw3v_sHXbNfJmlaXW_g",
-  authDomain: "housing-property-1eb80.firebaseapp.com",
-  projectId: "housing-property-1eb80",
-  storageBucket: "housing-property-1eb80.appspot.com",
-  messagingSenderId: "999023944676",
-  appId: "1:999023944676:web:1df776cfc9244b351b5df1",
-  measurementId: "G-C6EDKW3295",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
 
 const app = initializeApp(firebaseConfig);
