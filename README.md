@@ -1,5 +1,5 @@
 
-  # 🏠 Housing Property Website
+  # Housing Property Website
 
 ## 📌 Purpose
 This project was built to practice creating a modern, responsive real estate website UI.  
@@ -12,12 +12,12 @@ Housing Property is a digital platform designed to simplify the process of disco
 - TypeScript + Vite
 - Tailwind CSS
 - Framer Motion
-- React
-- Sonner
+- React Libraries
 
 ## ✨ Features
 - ✅ Property listings page with clean layout  
 - ✅ Responsive design for desktop & mobile  
 - ✅ Modern animations and transitions  
-- ⬜ Login & Register pages (coming soon)  
-- ⬜ Firebase integration for dynamic data (coming soon)
+- ✅ Login & Register pages  
+- ✅ Firebase integration for dynamic data
+- ⬜ CRUD Features
