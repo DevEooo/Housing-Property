@@ -3,6 +3,9 @@ import { Button } from '../../components/dashboard ui/ui/button.tsx';
 import { Separator } from '../../components/dashboard ui/ui/separator.tsx';
 import { Avatar, AvatarImage, AvatarFallback } from '../../components/dashboard ui/ui/avatar.tsx';
 import { User, Settings, LogOut, Edit } from 'lucide-react';
+import { useUser } from '../../contexts/UserContext';
+import { logout } from '../../../function/models/authService';
+import { useNavigate } from 'react-router-dom';
 
 interface AvatarDropdownProps {
   isOpen: boolean;
@@ -10,9 +13,16 @@ interface AvatarDropdownProps {
 }
 
 export function AvatarDropdown({ isOpen, onClose }: AvatarDropdownProps) {
-  const handleLogout = () => {
-    // Handle logout logic here
-    console.log('Logging out...');
+  const user = useUser();
+  const navigate = useNavigate();
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+      navigate('/');
+    } catch (error) {
+      console.error('Logout error:', error);
+    }
     onClose();
   };
 
@@ -35,12 +45,12 @@ export function AvatarDropdown({ isOpen, onClose }: AvatarDropdownProps) {
           <DialogHeader className="text-left">
             <div className="flex items-center gap-3 mb-4">
               <Avatar className="w-12 h-12">
-                <AvatarImage src="https://images.unsplash.com/photo-1701463387028-3947648f1337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBhdmF0YXJ8ZW58MXx8fHwxNzU3OTU2Nzk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Sarah Johnson" />
-                <AvatarFallback>SJ</AvatarFallback>
+                <AvatarImage src={user?.photoURL || ''} alt={user?.displayName || 'User'} />
+                <AvatarFallback>{user?.displayName?.split(' ').map((n: string) => n[0]).join('').toUpperCase() || 'U'}</AvatarFallback>
               </Avatar>
               <div>
-                <DialogTitle className="text-base font-medium">Sarah Johnson</DialogTitle>
-                <p className="text-sm text-muted-foreground">sarah.johnson@email.com</p>
+                <DialogTitle className="text-base font-medium">{user?.displayName || 'Guest'}</DialogTitle>
+                <p className="text-sm text-muted-foreground">{user?.email || ''}</p>
               </div>
             </div>
           </DialogHeader>

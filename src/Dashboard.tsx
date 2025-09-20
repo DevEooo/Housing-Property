@@ -3,11 +3,13 @@ import { Header } from './pages/dashboard/header';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { MyProperties } from './pages/dashboard/my-properties';
 import { Favorites } from './pages/dashboard/favorites';
+import { FirebaseTest } from './pages/dashboard/firebase-test';
 import { NavigationProvider, useNavigation } from './pages/dashboard/navigation-context';
+import { UserProvider } from './contexts/UserContext';
 
 function AppContent() {
   const { currentPage } = useNavigation();
-  
+
   const renderPage = () => {
     switch (currentPage) {
       case 'dashboard':
@@ -16,6 +18,8 @@ function AppContent() {
         return <MyProperties />;
       case 'favorites':
         return <Favorites />;
+      case 'test':
+        return <FirebaseTest />;
       default:
         return <Dashboard />;
     }
@@ -42,8 +46,10 @@ function AppContent() {
 
 export default function App() {
   return (
-    <NavigationProvider>
-      <AppContent />
-    </NavigationProvider>
+    <UserProvider>
+      <NavigationProvider>
+        <AppContent />
+      </NavigationProvider>
+    </UserProvider>
   );
 }

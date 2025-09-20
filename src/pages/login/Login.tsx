@@ -26,7 +26,6 @@ export function Login() {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log('Logged in user:', userCredential.user);
-      // Redirect user to homepage after login
       navigate('/dashboard');
     } catch (err: any) {
       console.error(err);

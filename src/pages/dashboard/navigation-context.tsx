@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
-type Page = 'dashboard' | 'properties' | 'favorites';
+type Page = 'dashboard' | 'properties' | 'favorites' | 'test';
 
 interface NavigationContextType {
   currentPage: Page;

@@ -1,14 +1,15 @@
-import { Home, Building, Heart } from 'lucide-react';
+import { Home, Building, Heart, Settings } from 'lucide-react';
 import { Button } from '../../components/dashboard ui/ui/button.tsx';
 import { useNavigation } from './navigation-context.tsx';
 
 export function Sidebar() {
   const { currentPage, setCurrentPage } = useNavigation();
-  
+
   const navigationItems = [
     { name: 'Dashboard', icon: Home, page: 'dashboard' as const },
     { name: 'My Properties', icon: Building, page: 'properties' as const },
     { name: 'Favorites', icon: Heart, page: 'favorites' as const },
+    { name: 'Firebase Test', icon: Settings, page: 'test' as const },
   ];
 
   return (

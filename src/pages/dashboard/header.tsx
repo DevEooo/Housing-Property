@@ -6,10 +6,12 @@ import { Badge } from '../../components/dashboard ui/ui/badge.tsx';
 import { useState } from 'react';
 import { NotificationModal } from './notification-modal.tsx';
 import { AvatarDropdown } from './avatar-dropdown.tsx';
+import { useUser } from '../../contexts/UserContext';
 
 export function Header() {
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [isAvatarDropdownOpen, setIsAvatarDropdownOpen] = useState(false);
+  const user = useUser();
 
   return (
     <>
@@ -50,15 +52,15 @@ export function Header() {
           <div className="w-[200px] flex justify-end items-center gap-3">
             <div className="text-right">
               <p className="font-medium">Welcome back,</p>
-              <p className="text-muted-foreground">Sarah Johnson</p>
+              <p className="text-muted-foreground">{user?.displayName || 'Guest'}</p>
             </div>
-            <button 
+            <button
               onClick={() => setIsAvatarDropdownOpen(true)}
               className="rounded-full hover:ring-2 hover:ring-ring transition-all"
             >
               <Avatar className="w-10 h-10">
-                <AvatarImage src="https://images.unsplash.com/photo-1701463387028-3947648f1337?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBwZXJzb24lMjBhdmF0YXJ8ZW58MXx8fHwxNzU3OTU2Nzk0fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral" alt="Sarah Johnson" />
-                <AvatarFallback>SJ</AvatarFallback>
+                <AvatarImage src={user?.photoURL || ''} alt={user?.displayName || 'User'} />
+                <AvatarFallback>{user?.displayName?.split(' ').map((n: string) => n[0]).join('').toUpperCase() || 'U'}</AvatarFallback>
               </Avatar>
             </button>
           </div>

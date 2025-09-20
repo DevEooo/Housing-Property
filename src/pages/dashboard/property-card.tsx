@@ -5,7 +5,6 @@ import { MapPin, Bed, Bath, Square } from 'lucide-react';
 import { ImageWithFallback } from '../fallback/ImageWithFallback.tsx';
 
 interface PropertyCardProps {
-  id: string;
   image: string;
   price: string;
   title: string;
