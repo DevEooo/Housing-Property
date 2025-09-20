@@ -64,6 +64,13 @@ export function PropertyForm({ isOpen, onClose, onSubmit, mode, property }: Prop
     }
   }, [mode, property, isOpen]);
 
+  // Reset submitting state when dialog closes
+  useEffect(() => {
+    if (!isOpen) {
+      setIsSubmitting(false);
+    }
+  }, [isOpen]);
+
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -95,6 +102,16 @@ export function PropertyForm({ isOpen, onClose, onSubmit, mode, property }: Prop
     if (!user) throw new Error('User not authenticated');
 
     console.log('Starting image upload...');
+
+    // Validate file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      throw new Error('File size must be less than 5MB');
+    }
+
+    // Validate file type
+    if (!file.type.startsWith('image/')) {
+      throw new Error('File must be an image');
+    }
 
     // Create storage reference with timestamp to avoid conflicts
     const timestamp = Date.now();
